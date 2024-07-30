@@ -12,42 +12,42 @@
 
 #include "push_swap.h"
 
-void	sa(t_list *a)
+void	sa(t_list **a)
 {
 	t_list	*prim;
 	t_list	*sec;
 
 	if (*a == NULL || (*a)->next == NULL)
 		return ;
-	prim = a;
-	sec = (a)->next;
+	prim = *a;
+	sec = (*a)->next;
 	prim->next = sec->next;
 	sec->next = prim;
-	a = sec;
-	write(1, "sa\n", 1);
+	*a = sec;
+	write(1, "sa\n", 3);
 }
 
-void	sb(t_list *b)
+void	sb(t_list **b)
 {
 	t_list	*prim;
 	t_list	*sec;
 
 	if (*b == NULL || (*b)->next == NULL)
 		return ;
-	prim = b;
-	sec = (b)->next;
+	prim = *b;
+	sec = (*b)->next;
 	prim->next = sec->next;
 	sec->next = prim;
-	b = sec;
-	write(1, "sb\n", 1);
+	*b = sec;
+	write(1, "sb\n", 3);
 }
 
-void	ss(t_list *a, t_list *b)
+void	ss(t_list **a, t_list **b)
 {
 	t_list	*prim;
 	t_list	*sec;
 
-	if (*a == NULL || *a->next == NULL || (*b == NULL || *b->next == NULL))
+	if (*a == NULL || (*a)->next == NULL || (*b == NULL || (*b)->next == NULL))
 		return ;
 	prim = *a;
 	sec = (*a)->next;
@@ -57,4 +57,5 @@ void	ss(t_list *a, t_list *b)
 	sec = (*b)->next;
 	prim->next = sec->next;
 	sec->next = prim->next;
+	write(1, "ss\n", 3);
 }

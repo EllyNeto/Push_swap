@@ -21,34 +21,58 @@ t_list	*last_elm(t_list *list)
 	return (list);
 }
 
+void ft_print_stacks(t_list *a, t_list *b)
+{
+	t_list *tmp_a;
+	t_list *tmp_b;
+	
+	tmp_a = a;
+	tmp_b = b;
+	while (tmp_a || tmp_b)
+	{
+		if (tmp_a != NULL)
+			printf("| %d |", tmp_a->val);
+		if (tmp_b != NULL)
+			printf("| %d |\n", tmp_b->val);
+		else
+			printf("\n");
+		if (tmp_a)
+			printf("  ↓");
+		if (tmp_b)
+			printf("    ↓\n");
+		else
+			printf("\n");
+		if (tmp_a != NULL)
+			tmp_a = tmp_a->next;
+		if (tmp_b != NULL)
+			tmp_b = tmp_b->next;
+	}
+	printf(" NULL  NULL\n");
+}
+
 void	ft_add(t_list **lst, int i)
 {
 	t_list	*new;
-	t_list	*aux;
 
-	new = malloc(sizeof(t_list));
+	new = (t_list *)malloc(sizeof(t_list));
 	new->val = i;
-	new->next = NULL;
-	if (*lst == NULL)
-		*lst = new;
-	else
-	{
-		aux = last_elm(*lst);
-		aux->next = new;
-	}
+	new->next = *lst;
+	*lst = new;
 }
 
 int	main(int argc, char **argv)
 {
 	t_list	*a;
+	t_list	*b;
 	int		i;
 	
-	(void) argc;
-	i = 0;
-	while (argv[i])
-	{
+	a = NULL;
+	b = NULL;
+	i = argc;
+	while (--i > 0)
 		ft_add(&a, ft_atoi(argv[i]));
-		i++;
-	}
+	ft_print_stacks(a, b);
+	sa(&a);
+	ft_print_stacks(a, b);
 	return (0);
 }

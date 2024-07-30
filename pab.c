@@ -12,32 +12,34 @@
 
 #include "push_swap.h"
 
-void	pa(t_list *a, t_list *b)
+void	pa(t_list **a, t_list **b)
 {
-	t_list prim;
+	t_list *prim;
 
-	if (b == NULL)
+	if (*b == NULL)
 		return;
 	else
 	{
-		prim = b;
-		b = b->next;
-		prim->next = a;
-		a = prim; 
+		prim = *b;
+		*b = (*b)->next;
+		prim->next = *a;
+		*a = prim; 
 	}
+	write(1, "pa\n", 3);
 }
 
-void	pb(t_list *a, t_list *b)
+void	pb(t_list **a, t_list **b)
 {
-	t_list prim;
+	t_list *prim;
 	
-	if (a == NULL)
+	if (*a == NULL)
 		return;
 	else
 	{
-		prim = a;
-		a = a->next;
-		prim->next = b;
-		b = prim;	
+		prim = *a;
+		*a = (*a)->next;
+		prim->next = *b;
+		*b = prim;	
 	}
+	write(1, "pb\n", 3);
 }
