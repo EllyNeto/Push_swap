@@ -33,7 +33,7 @@ void	ft_add(t_list **lst, int i)
 		*lst = new;
 	else
 	{
-		aux = last_elem(*lst);
+		aux = last_elm(*lst);
 		aux->next = new;
 	}
 }
@@ -42,7 +42,8 @@ int	main(int argc, char **argv)
 {
 	t_list	*a;
 	int		i;
-
+	
+	(void) argc;
 	i = 0;
 	while (argv[i])
 	{
