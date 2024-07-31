@@ -14,10 +14,10 @@
 
 void	pa(t_list **a, t_list **b)
 {
-	t_list *prim;
+	t_list	*prim;
 
 	if (*b == NULL)
-		return;
+		return ;
 	else
 	{
 		prim = *b;
@@ -30,16 +30,16 @@ void	pa(t_list **a, t_list **b)
 
 void	pb(t_list **a, t_list **b)
 {
-	t_list *prim;
-	
+	t_list	*prim;
+
 	if (*a == NULL)
-		return;
+		return ;
 	else
 	{
 		prim = *a;
 		*a = (*a)->next;
 		prim->next = *b;
-		*b = prim;	
+		*b = prim;
 	}
 	write(1, "pb\n", 3);
 }

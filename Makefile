@@ -3,7 +3,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 LIBFT = libft.a
 RM = rm -drf
-SRCS = verify.c main.c sabs.c pab.c
+SRCS = verify.c main.c sabs.c pab.c  rabr.c  
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

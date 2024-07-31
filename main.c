@@ -21,11 +21,11 @@ t_list	*last_elm(t_list *list)
 	return (list);
 }
 
-void ft_print_stacks(t_list *a, t_list *b)
+void	ft_print_stacks(t_list *a, t_list *b)
 {
-	t_list *tmp_a;
-	t_list *tmp_b;
-	
+	t_list	*tmp_a;
+	t_list	*tmp_b;
+
 	tmp_a = a;
 	tmp_b = b;
 	while (tmp_a || tmp_b)
@@ -65,14 +65,14 @@ int	main(int argc, char **argv)
 	t_list	*a;
 	t_list	*b;
 	int		i;
-	
+
 	a = NULL;
 	b = NULL;
 	i = argc;
 	while (--i > 0)
 		ft_add(&a, ft_atoi(argv[i]));
 	ft_print_stacks(a, b);
-	sa(&a);
+	ss(&a,&b);
 	ft_print_stacks(a, b);
 	return (0);
 }
