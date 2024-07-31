@@ -17,7 +17,7 @@ void	ra(t_list **a)
 	t_list	*aux;
 	t_list	*prox;
 
-	if (!*a && !(*a)->next)
+	if (!(*a) || !(*a)->next)
 		return ;
 	aux = *a;
 	prox = (*a)->next;
@@ -34,7 +34,7 @@ void	rb(t_list **b)
 	t_list	*aux;
 	t_list	*prox;
 
-	if (!*b && !(*b)->next)
+	if (!(*b) || !(*b)->next)
 		return ;
 	aux = *b;
 	prox = (*b)->next;
@@ -51,7 +51,7 @@ void	rrr(t_list **a, t_list **b)
 	t_list	*aux;
 	t_list	*prox;
 
-	if (!*a && !(*a)->next && !*b && !(*b)->next)
+	if (!(*a) || !(*a)->next || !(*b) || !(*b)->next)
 		return ;
 	aux = *a;
 	prox = (*a)->next;

@@ -71,8 +71,8 @@ int	main(int argc, char **argv)
 	i = argc;
 	while (--i > 0)
 		ft_add(&a, ft_atoi(argv[i]));
-	ft_print_stacks(a, b);
-	ss(&a,&b);
+	ft_print_stacks(a,b);
+	rrr(&a,&b);
 	ft_print_stacks(a, b);
 	return (0);
 }
