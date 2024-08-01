@@ -46,7 +46,7 @@ void	rb(t_list **b)
 	write(1, "rb\n", 3);
 }
 
-void	rrr(t_list **a, t_list **b)
+void	rr(t_list **a, t_list **b)
 {
 	t_list	*aux;
 	t_list	*prox;
