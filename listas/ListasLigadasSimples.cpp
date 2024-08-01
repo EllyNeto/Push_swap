@@ -13,27 +13,35 @@ lista* criar (){
 }
 
 // função para inserir um nó no final da lista
-lista * inserirFim(lista *l, int i){
-	lista* novo = (lista*)malloc(sizeof(lista)); // aloca espaço para o novo nó
-	if(novo){
+lista * inserirFim(lista *l, int i)
+{
+	lista* novo;
+	
+	novo = (lista*)malloc(sizeof(lista)); // aloca espaço para o novo nó
+	if (novo)
+	{
 		//inicialização do novo nó
 		novo->valor = i;
 		novo->prox= NULL;
 		
-		if(l){
+		if (l)
+		{
 			lista* aux =l;
 			// Percorre a lista recebendo o endereço do próximo nó
 			//Quando o próximo nó for igual a NULL ele para porque isso indica que está no último nó da lista
-			while(aux->prox){
+			while (aux->prox)
+			{
 				aux = aux->prox;
 			}
 			aux->prox = novo;// o último nó da lista recebe o novo nó criado
 		}
-		else{ // se a lista estiver vazia, o ponteiro que aponta para o início da lista recebe o novo nó criado
+		else
+		{ // se a lista estiver vazia, o ponteiro que aponta para o início da lista recebe o novo nó criado
 			l = novo;
 		}
 	}
-	else{
+	else
+	{
 		printf("Erro de alocação");
 	}
 	
