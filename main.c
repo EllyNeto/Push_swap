@@ -6,20 +6,11 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 16:46:40 by eneto             #+#    #+#             */
-/*   Updated: 2024/07/26 10:21:30 by eneto            ###   ########.fr       */
+/*   Updated: 2024/08/05 15:06:16 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_list	*last_elm(t_list *list)
-{
-	if (list == NULL)
-		return (NULL);
-	while (list->next != NULL)
-		list = list->next;
-	return (list);
-}
 
 void	ft_print_stacks(t_list *a, t_list *b)
 {
@@ -60,19 +51,38 @@ void	ft_add(t_list **lst, int i)
 	*lst = new;
 }
 
+void	choose_algorithm(t_list **a, t_list **b)
+{
+	rrr(a, b);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*a;
 	t_list	*b;
+	char	**arg_split;
 	int		i;
 
 	a = NULL;
 	b = NULL;
 	i = argc;
-	while (--i > 0)
-		ft_add(&a, ft_atoi(argv[i]));
+	arg_split = ft_split(argv[1], ' ');
+	if (argc == 2)
+		i = count_arg(arg_split);
+	if (argc > 2)
+		while (--i > 0)
+			ft_add(&a, ft_atoi(argv[i]));
+	else if (argc == 2)
+		while (--i >= 0)
+			ft_add(&a, ft_atoi(arg_split[i]));
+	if (is_not_sorted(&a) == true)
+	{
+		choose_algorithm(&a, &b);
+		ft_print_stacks(a, b);
+	}
+	rra(&a);
 	ft_print_stacks(a, b);
-	rrr(&a,&b);
-	ft_print_stacks(a, b);
+	free_stack(&a);
+	free_arg(arg_split);
 	return (0);
 }

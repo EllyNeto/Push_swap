@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 17:51:42 by eneto             #+#    #+#             */
-/*   Updated: 2024/08/01 10:34:56 by eneto            ###   ########.fr       */
+/*   Updated: 2024/08/05 13:27:55 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ void	rrb(t_list **b)
 	t_list	*aux;
 	t_list	*last;
 
-	aux = *b;
-	last = (*b)->next;
 	if (!(*b) || !(*b)->next)
 		return ;
+	aux = *b;
+	last = (*b)->next;
 	while (last->next != NULL)
 	{
 		aux = last;
@@ -57,12 +57,12 @@ void	rrr(t_list **a, t_list **b)
 	t_list	*aux;
 	t_list	*last;
 
+	if (!(*a) || !(*a)->next || !(*b) || !(*b)->next)
+		return ;
 	aux = *a;
 	last = (*a)->next;
 	aux = *b;
 	last = (*b)->next;
-	if (!(*a) || !(*a)->next || !(*b) || !(*b)->next)
-		return ;
 	while (last->next != NULL)
 	{
 		aux = last;

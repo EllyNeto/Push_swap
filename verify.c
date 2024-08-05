@@ -6,30 +6,11 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 10:43:57 by eneto             #+#    #+#             */
-/*   Updated: 2024/07/24 13:23:10 by eneto            ###   ########.fr       */
+/*   Updated: 2024/08/05 14:56:29 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*
-void	verify(char *num)
-{
-	t_list	*aux;
-	int		tmp;
-	int		tmp2;
-
-	if (aux->val > 0)
-	{
-		tmp = aux->val;
-		aux = aux->next;
-	}
-	else if (aux->negative < 0)
-	{
-		tmp2 = aux->negative;
-		aux = aux->next;
-	}
-}/*/
 
 bool	duplicate(t_list **stack, int counter)
 {
@@ -54,26 +35,24 @@ bool	duplicate(t_list **stack, int counter)
 
 bool	is_not_sorted(t_list **stack)
 {
-	t_list	*curr;
 	t_list	*top;
 
 	top = *stack;
-	while (top)
+	while (top->next)
 	{
-		curr = top->next;
-		while (curr)
-		{
-			if (top->val < curr->val)
-				return (true);
-			curr = curr->next;
-		}
+		if (top->val > top->next->val)
+			return (true);
 		top = top->next;
 	}
 	return (false);
 }
 
-void	mensage_error()
+void	message_error(t_list **a, char **arg_split)
 {
+	if (*a)
+		free_stack(a);
+	if (*arg_split)
+		free_arg(arg_split);
 	write(2, "Error\n", 6);
 	exit(1);
 }

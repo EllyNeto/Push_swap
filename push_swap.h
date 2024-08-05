@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 10:44:31 by eneto             #+#    #+#             */
-/*   Updated: 2024/07/24 10:53:07 by eneto            ###   ########.fr       */
+/*   Updated: 2024/08/05 14:10:35 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,15 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+// VERIFS
 bool		duplicate(t_list **stack, int counter);
 bool		is_not_sorted(t_list **stack);
+void		free_stack(t_list **stack_a);
+void		free_arg(char **arg_split);
+void		message_error(t_list **a, char **arg_split);
+int			count_arg(char **arg_split);
+
+// OPERATIONS3
 void		pa(t_list **a, t_list **b);
 void		pb(t_list **a, t_list **b);
 void		sa(t_list **a);
