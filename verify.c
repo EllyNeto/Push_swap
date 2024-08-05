@@ -74,4 +74,6 @@ bool	is_not_sorted(t_list **stack)
 
 void	mensage_error()
 {
+	write(2, "Error\n", 6);
+	exit(1);
 }
