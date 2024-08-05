@@ -14,8 +14,8 @@
 
 void	rra(t_list **a)
 {
-	t_list *last;
-	t_list *aux;
+	t_list	*last;
+	t_list	*aux;
 
 	if (!(*a) || !(*a)->next)
 		return ;
@@ -29,14 +29,14 @@ void	rra(t_list **a)
 	aux->next = NULL;
 	last->next = *a;
 	*a = last;
-	write(1, "rra\n", 3);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_list **b)
 {
 	t_list	*aux;
 	t_list	*last;
-	
+
 	aux = *b;
 	last = (*b)->next;
 	if (!(*b) || !(*b)->next)
@@ -49,5 +49,30 @@ void	rrb(t_list **b)
 	aux->next = NULL;
 	last->next = *b;
 	*b = last;
-	write(1, "rrb\n", 3);
+	write(1, "rrb\n", 4);
+}
+
+void	rrr(t_list **a, t_list **b)
+{
+	t_list	*aux;
+	t_list	*last;
+
+	aux = *a;
+	last = (*a)->next;
+	aux = *b;
+	last = (*b)->next;
+	if (!(*a) || !(*a)->next || !(*b) || !(*b)->next)
+		return ;
+	while (last->next != NULL)
+	{
+		aux = last;
+		last = last->next;
+	}
+	aux->next = NULL;
+	last->next = *a;
+	*a = last;
+	aux->next = NULL;
+	last->next = *b;
+	*b = last;
+	write(1, "rrr\n", 4);
 }

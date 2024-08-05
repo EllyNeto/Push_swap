@@ -71,3 +71,7 @@ bool	is_not_sorted(t_list **stack)
 	}
 	return (false);
 }
+
+void	mensage_error()
+{
+}

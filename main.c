@@ -72,7 +72,7 @@ int	main(int argc, char **argv)
 	while (--i > 0)
 		ft_add(&a, ft_atoi(argv[i]));
 	ft_print_stacks(a, b);
-	rrb(&b);
+	rrr(&a,&b);
 	ft_print_stacks(a, b);
 	return (0);
 }
