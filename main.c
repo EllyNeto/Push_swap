@@ -53,7 +53,7 @@ void	ft_add(t_list **lst, int i)
 
 void	choose_algorithm(t_list **a, t_list **b)
 {
-	rrr(a, b);
+	ft_print_stacks(*a, *b);
 }
 
 int	main(int argc, char **argv)
@@ -71,17 +71,14 @@ int	main(int argc, char **argv)
 		i = count_arg(arg_split);
 	if (argc > 2)
 		while (--i > 0)
-			ft_add(&a, ft_atoi(argv[i]));
+			ft_add(&a, ft_atoi_arg(argv[i], &a, arg_split));
 	else if (argc == 2)
 		while (--i >= 0)
-			ft_add(&a, ft_atoi(arg_split[i]));
+			ft_add(&a, ft_atoi_arg(arg_split[i], &a, arg_split));
+	if (duplicate(&a) == true)
+		message_error(&a, arg_split);
 	if (is_not_sorted(&a) == true)
-	{
 		choose_algorithm(&a, &b);
-		ft_print_stacks(a, b);
-	}
-	rra(&a);
-	ft_print_stacks(a, b);
 	free_stack(&a);
 	free_arg(arg_split);
 	return (0);

@@ -23,12 +23,13 @@ typedef struct s_list
 }	t_list;
 
 // VERIFS
-bool		duplicate(t_list **stack, int counter);
+bool		duplicate(t_list **stack);
 bool		is_not_sorted(t_list **stack);
 void		free_stack(t_list **stack_a);
 void		free_arg(char **arg_split);
 void		message_error(t_list **a, char **arg_split);
 int			count_arg(char **arg_split);
+int			ft_atoi_arg(const char *str, t_list **a, char **arg_split);
 
 // OPERATIONS3
 void		pa(t_list **a, t_list **b);

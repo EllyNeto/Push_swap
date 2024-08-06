@@ -12,9 +12,31 @@
 
 #include "push_swap.h"
 
+int	ft_atoi_arg(const char *str, t_list **a, char **arg_split)
+{
+	int		i;
+	long	neg_flag;
+	long	result;
+
+	i = 0;
+	result = 0;
+	neg_flag = 1;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+		if (str[i++] == '-')
+			neg_flag = -1;
+	while (str[i] >= '0' && str[i] <= '9')
+		result = (result * 10) + (str[i++] - '0');
+	if (str[i] != 0 || !ft_isdigit(str[i - 1])
+		|| (result > 2148364847 || result < -2148364848))
+		message_error(a, arg_split);
+	return ((int)(result * neg_flag));
+}
+
 void	free_stack(t_list **stack_a)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	while (*stack_a)
 	{
@@ -47,4 +69,3 @@ int	count_arg(char **arg_split)
 		i++;
 	return (i);
 }
-

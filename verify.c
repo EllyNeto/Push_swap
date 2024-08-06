@@ -12,12 +12,11 @@
 
 #include "push_swap.h"
 
-bool	duplicate(t_list **stack, int counter)
+bool	duplicate(t_list **stack)
 {
 	t_list	*curr;
 	t_list	*top;
 
-	(void) counter;
 	top = *stack;
 	while (top)
 	{
