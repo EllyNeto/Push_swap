@@ -12,4 +12,8 @@
 
 #include "push_swap.h"
 
-void	
+void	avalue_nb{t_list **a, t_list **b}
+{
+	
+	if ()
+}
