@@ -14,6 +14,16 @@
 
 void	avalue_nb{t_list **a, t_list **b}
 {
+	t_list	aux;
 	
-	if ()
+	aux = *a;
+	aux = *b;
+	if (aux == 3)
+	{
+		while(count_arg(aux))
+		{
+	
+		}
+		
+	}
 }
