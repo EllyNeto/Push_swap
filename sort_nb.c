@@ -20,6 +20,10 @@ void	avalue_nb(t_list **a, t_list **b)
 	aux = *b;
 	while (count_arg(aux))
 	{
+		if (aux == 3)
+		{
+			
+		}
 		aux = aux->next;
 	}
 }

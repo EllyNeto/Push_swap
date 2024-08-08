@@ -21,7 +21,8 @@ typedef struct s_list
 	int				val;
 	struct s_list	*next;
 }	t_list;
-
+//Sorts
+void	avalue_nb(t_list **a, t_list **b)
 // VERIFS
 bool		duplicate(t_list **stack);
 bool		is_not_sorted(t_list **stack);
