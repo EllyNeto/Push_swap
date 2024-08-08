@@ -47,7 +47,6 @@ void	ft_add(t_list **lst, int i)
 
 	new = (t_list *)malloc(sizeof(t_list));
 	new->val = i;
-	new->index = -1;
 	new->next = *lst;
 	*lst = new;
 }

@@ -12,18 +12,14 @@
 
 #include "push_swap.h"
 
-void	avalue_nb{t_list **a, t_list **b}
+void	avalue_nb(t_list **a, t_list **b)
 {
 	t_list	aux;
-	
+
 	aux = *a;
 	aux = *b;
-	if (aux == 3)
+	while (count_arg(aux))
 	{
-		while(count_arg(aux))
-		{
-	
-		}
-		
+		aux = aux->next;
 	}
 }
