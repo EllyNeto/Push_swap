@@ -22,7 +22,8 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 //Sorts
-void	avalue_nb(t_list **a, t_list **b)
+void		avalue_nb(t_list **a, t_list **b);
+int		sort_two(t_list **a);
 // VERIFS
 bool		duplicate(t_list **stack);
 bool		is_not_sorted(t_list **stack);
@@ -30,6 +31,7 @@ void		free_stack(t_list **stack_a);
 void		free_arg(char **arg_split);
 void		message_error(t_list **a, char **arg_split);
 int			count_arg(char **arg_split);
+int			count_l(t_list *arg);
 int			ft_atoi_arg(const char *str, t_list **a, char **arg_split);
 
 // OPERATIONS3

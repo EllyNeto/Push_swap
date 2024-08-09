@@ -14,16 +14,26 @@
 
 void	avalue_nb(t_list **a, t_list **b)
 {
-	t_list	aux;
+	int	i;
 
-	aux = *a;
-	aux = *b;
-	while (count_arg(aux))
-	{
-		if (aux == 3)
-		{
-			
-		}
-		aux = aux->next;
-	}
+	i = count_l(*a);
+	if (i == 2)
+		sort_two(a);
+	ft_print_stacks(a, b);
 }
+
+int	sort_two(t_list **a)
+{
+	if (!*a || !(*a)->next)
+		return (0);
+	sa(a);
+	return (1);
+}
+
+/*int	sort_three(t_list **a)
+{
+	t_list	*aux;
+	
+	aux = *a;
+	
+}*/

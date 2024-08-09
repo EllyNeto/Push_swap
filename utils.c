@@ -69,3 +69,18 @@ int	count_arg(char **arg_split)
 		i++;
 	return (i);
 }
+
+int	count_l(t_list *arg)
+{
+	t_list	*aux;
+	int	i;
+	
+	i = 0;
+	aux = arg;
+	while(aux)
+	{
+		aux = aux->next;
+		i++;
+	}
+	return (i);
+}

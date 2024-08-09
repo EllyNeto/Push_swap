@@ -53,6 +53,7 @@ void	ft_add(t_list **lst, int i)
 
 void	choose_algorithm(t_list **a, t_list **b)
 {
+	avalue_nb(a);
 	ft_print_stacks(*a, *b);
 }
 
